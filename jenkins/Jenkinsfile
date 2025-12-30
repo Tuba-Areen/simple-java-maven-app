@@ -28,5 +28,11 @@ pipeline {
                 sh './jenkins/scripts/deliver.sh' 
             }
         }
+        stage('Deliver') {
+            steps {
+        // This runs the JAR in the background
+                sh 'nohup java -jar target/my-app-1.0-SNAPSHOT.jar > app.log 2>&1 &'
+    }
+}
     }
 }
