@@ -1,5 +1,9 @@
 pipeline {
     agent any
+    tools {
+        maven 'Maven_Home' // Whatever your maven tool name is
+        jdk 'Jave_Home'         // Must match the name you gave in Global Tools
+    }
     options {
         skipStagesAfterUnstable()
     }
